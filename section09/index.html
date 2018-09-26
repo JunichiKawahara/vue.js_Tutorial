@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>section09</title>
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app">
+            <h1>section09</h1>
+            <h2>テンプレートにおける条件分岐</h2>
+
+            <div v-if="ok">v-if条件による描画</div>
+            <div v-show="ok">v-show条件による描画</div>
+
+            <template v-if="ok">
+                <header>タイトル</header>
+                <div>コンテンツ</div>
+            </template>
+
+            <hr>
+            <h2>v-else-ifおよびv-elseによるグループ化</h2>
+            <p>※v-show では使用できない</p>
+            <div v-if="type === 'A'">
+                type はA
+            </div>
+            <div v-else-if="type === 'B'">
+                type はB
+            </div>
+            <div v-else>
+                すべての条件を満たさなかった
+            </div>
+
+        </div>
+        <script src="../js/vue_2_4_17/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>section 10</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>section 10 リストデータ</h1>
+            <h2>外部からデータを取得する</h2>
+            <ul>
+                <li v-for="(item, index) in list" v-bind:key="item.id">
+                    ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
+                </li>
+            </ul>
+            <hr>
+            <a href="./index.html">ページ１に戻る</a>
+        </div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
+        <script src="../js/vue_2_4_17/vue.js"></script>
+        <script src="main2.js"></script>
+    </body>
+</html>
