@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>section08</title>
+        <!--
+        <link href="main.css" rel="stylesheet">
+        -->
+    </head>
+    <body>
+        <div id="app">
+            <h1>section08</h1>
+            <h2>テキストと属性のデータバインディング</h2>
+
+            <h3>オブジェクトデータ</h3>
+            <p>{{ message.value }}</p>
+
+            <h3>プロパティ</h3>
+            <p>{{ message.value.length }}</p>
+
+            <h3>配列</h3>
+            <p>{{ list[2] }}</p>
+
+            <h3>プロパティを組み合わせて使用</h3>
+            <p>{{ list[num] }}</p>
+
+            <hr>
+            <h3>式</h3>
+            <p>{{ 1 + 1 }}</p>
+
+            <!--
+            <h3>エラーが発生する</h3>
+            <p>{{ var foo = 'error' }}</p>
+            -->
+
+            <h3>条件によってテキストを変更する</h3>
+            <p>{{ message.value.length >= 10 ? '10文字以上' : '10文字未満' }}</p>
+
+            <h3>小数点を丸める</h3>
+            <p>{{ Math.round(3.14) }}</p>
+
+            <h2>属性へのデータバインディング</h2>
+            <!--
+            <h3>属性ではMustache が展開できない</h3>
+            <input type="text" value="{{ message.value }}">
+            -->
+
+            <h3>属性へのバインドには「v-bind」ディレクティブを使用する</h3>
+            <input type="text" v-bind:value="message.value">
+
+            <h3>「v-bind:」 は「:」と省略して記述できる</h3>
+            <input type="text" :value="message.value">
+
+            <hr>
+            <h2>v-bindの修飾子</h2>
+            <p>.prop修飾子は、DOMプロパティと直接、バインドする</p>
+            <div v-bind:text-content.prop="message.value">
+                あいうえお<br>
+                かきくけこ
+            </div>
+            <div v-bind:scroll-top.prop="scroll">
+                さしすせそ<br>
+                たちつてと
+            </div>
+
+            <hr>
+            <h2>クリックでカウンターを増やす</h2>
+            <p>{{ count }}回クリックした</p>
+            <button v-on:click="increment">カウントを増やす</button>
+
+            <hr>
+            <h2>クラスとスタイルのデータバインディング</h2>
+            <p v-bind:class="{ child: isChild, 'is-active': isActive }">Text</p>
+            <p v-bind:style="{ color: textColor, backgroundColor: bgColor }">Text</p>
+
+            <hr>
+            <h2>SVGのデータバインディング</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <circle cs="100" cy="75" v-bind:r="radius" fill="lightpink"/>
+            </svg>
+            <input type="range" min="10" max="100" v-model="radius">
+
+        </div>
+        <script src="../js/vue_2_4_17/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
