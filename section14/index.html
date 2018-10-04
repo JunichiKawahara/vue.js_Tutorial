@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>section 14</title>
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app">
+            <h1>section 14 フォーム入力バインディング</h1>
+
+            <h2>v-modelディレクティブ</h2>
+            <input v-model="message">
+            <p>{{ message }}</p>
+
+            <h2>複数行テキスト</h2>
+            <textarea v-model="message"></textarea>
+            <pre>{{ message }}</pre>
+
+            <h2>チェックボックス</h2>
+            <h3>単一要素</h3>
+            <p>単一チェックボックスのデフォルトの値はBooleanです。</p>
+            <label>
+                <input type="checkbox" v-model="val">{{ val }}
+            </label>
+
+            <h3>複数要素のチェックボックス</h3>
+            <p>複数要素のチェックボックスの値の型は配列です。v-modelには同じ配列データを使用し、各要素にvalue属性を設定します。</p>
+            <label><input type="checkbox" v-model="arrayVal" value="A"> A</label>
+            <label><input type="checkbox" v-model="arrayVal" value="B"> B</label>
+            <label><input type="checkbox" v-model="arrayVal" value="C"> C</label>
+            <p>{{ arrayVal }}</p>
+            <p>チェックされているチェックボックスの値がarrayValプロパティに格納されます。</p>
+
+            <h2>ラジオボタン</h2>
+            <p>ラジオボタンのデフォルトの値の型は文字列です。</p>
+            <label><input type="radio" value="a" v-model="radioVal"> A</label>
+            <label><input type="radio" value="b" v-model="radioVal"> B</label>
+            <label><input type="radio" value="c" v-model="radioVal"> C</label>
+            <p>{{ radioVal }}</p>
+
+            <h2>セレクトボックス</h2>
+            <h3>単一選択</h3>
+            <p>単一選択セレクトボックスのデフォルトの値の型は文字列です。</p>
+            <select v-model="selectVal">
+                <option disabled="disabled" value="default">選択してください</option>
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+            </select>
+            <p>{{ selectVal }}</p>
+
+            <h3>複数選択</h3>
+            <p>複数選択セレクトボックスのデフォルトの値の型は文字列です。</p>
+            <select v-model="multiSelectVal" multiple>
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+            </select>
+            <p>{{ multiSelectVal }}</p>
+
+
+            <div id="footer">
+                    <a href="/index.html">トップページへ</a>
+                </div>
+            </div>
+        <script src="../js/vue_2_4_17/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
