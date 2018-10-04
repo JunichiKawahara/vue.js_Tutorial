@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>section 13</title>
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app">
+            <h1>section 13 イベントハンドリング</h1>
+
+            <button v-on:click="handleClick">クリック</button>
+
+            <h2>画像のロードイベントをハンドル</h2>
+            <img src="images.jpeg" v-on:load="show=true" v-bind:class="{hide: !show}">
+
+            <h2>要素のスクロールイベントをハンドル</h2>
+            <div v-on:scroll="handler">
+                コンテンツ<br>
+                <span>{{ counter }}</span>
+            </div>
+
+            <h2>マウスのホイールイベントをハンドル</h2>
+            <div v-on:mousewheel="handler">
+                コンテンツ<br>
+                <span>{{ counter }}</span>
+            </div>
+
+            <h2>ドラッグイベント</h2>
+            <div v-on:dragstart="handler" draggable>
+                ドラッグ可能
+            </div>
+
+            <h2>フォーム入力の取得</h2>
+            <input v-bind:value="message" v-on:input="handleInput"><br>
+            {{ message }}
+
+            <div id="footer">
+                    <a href="/index.html">トップページへ</a>
+                </div>
+            </div>
+        <script src="../js/vue_2_4_17/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
