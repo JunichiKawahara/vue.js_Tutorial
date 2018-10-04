@@ -2,12 +2,43 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>section</title>
+        <title>section 12</title>
         <link href="main.css" rel="stylesheet">
     </head>
     <body>
-        <div id="app">
-            <h1>section </h1>
+        <div id="app" v-cloak>
+            <h1>section 12 テンプレート制御ディレクティブ</h1>
+            <p>なぜか、safari だとうまく動かない。。。Chrome だと正常に動作する。</p>
+
+            <h2>v-pre</h2>
+            <p>v-preディレクティブは、子コンポーネントを含む内側のHTMLのコンパイルをスキップして静的なコンテンツとして扱います。</p>
+            <p>
+                Mustacheやディレクティブがそのまま表示されます。
+                <a v-bind:href="url" v-pre>
+                    Hello {{ message }}
+                </a>
+            </p>
+
+            <h2>v-once</h2>
+            <p>v-onceディレクティブは、初回だけテンプレートを評価しそれ以降は静的なコンテンツとして扱います。</p>
+            <p>
+                <a v-bind:href="url" v-once>
+                    Hello {{ message }}
+                </a>
+            </p>
+
+            <h2>v-text</h2>
+            <p>要素ないのテキストコンテンツが単一のMustacheのみで構成される場合、代わりにv-textディレクティブを使って同じようにテキストコンテンツをバインドできます。</p>
+            <span v-text="message"></span>
+
+            <h2>v-html</h2>
+            <p>Mustach を使った描画では、XSS対策のため、必ずHTMLエンティティ化されます。HTMLタグをそのまま表示させたい場合はv-htmlディレクティブを使用します。</p>
+            <span v-html="htmlMessage"></span>
+
+            <h2>v-cloak</h2>
+            <p>v-cloakディレクティブは、インスタンスの準備が終わると自動的に取り除かれます。インスタンス作成までの間、Mustashなどのコンパイル前のテンプレートが画面に表示されてしまうのを防ぐことができます。</p>
+
+
 
             <div id="footer">
                     <a href="/index.html">トップページへ</a>
