@@ -1,0 +1,36 @@
+#footer {
+    border: 1px solid #999;
+    text-align: center;
+    font-size: 9pt;
+    color: #333;
+    background-color: #ffcc33;
+}
+
+header {
+    height: 100px;
+    width: 100%;
+    background-color: #333;
+    color: #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+header.compact {
+    height: 50px;
+}
+
+#divBody {
+    margin-top: 100px;
+}
+
+.divCompact {
+    margin-top: 50px;
+}
+
+h2 {
+    padding: 2px 4px;
+    background-color: #333;
+    color: #ccc;
+}
