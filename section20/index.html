@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>section 20</title>
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app">
+            <h1>section 20 nextTickで更新後のDOMにアクセスする</h1>
+
+            <button v-on:click="list.push(list.length+1)">追加</button>
+            <ul ref="list">
+                <li v-for="item in list">{{ item }}</li>
+            </ul>
+
+            <div id="footer">
+                    <a href="/index.html">トップページへ</a>
+                </div>
+            </div>
+        <script src="../js/vue_2_4_17/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
