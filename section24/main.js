@@ -20,7 +20,13 @@ Vue.component('multi-slot-child', {
     */}).toString().match(/\/\*\n*([^]*)\*\//)[1].replace(/\n*$/, "")
 })
 
-
+Vue.component('scope-child', {
+    template: (function() {/*
+        <div class="scope-child">
+            <slot text="Hello!"></slot>
+        </div>
+    */}).toString().match(/\/\*\n*([^]*)\*\//)[1].replace(/\n*$/, "")
+})
 
 var app = new Vue({
     el: '#app',

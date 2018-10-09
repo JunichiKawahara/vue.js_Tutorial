@@ -28,6 +28,12 @@
                 Vue.jsはJavaScriptのフレームワークです。
             </multi-slot-child>
 
+            <h2>スコープ付きスロット</h2>
+            <scope-child>
+                <p slot-scope="props">
+                    スロットから受け取ったtext → {{ props.text }}
+                </p>
+            </scope-child>
 
             <h2>ちなみに</h2>
             <div>
