@@ -1,0 +1,48 @@
+#footer {
+    border: 1px solid #999;
+    text-align: center;
+    font-size: 9pt;
+    color: #333;
+    background-color: #ffcc33;
+}
+
+h2 {
+    padding: 2px 4px;
+    background-color: #333;
+    color: #ccc;
+}
+
+.v-enter-active, .v-learve-active {
+    transition: opacity 1s;
+    position: absolute;
+}
+
+.v-enter, .v-leave-to {
+    opacity: 0;
+}
+
+/* クラスのプレフィックスが「demo-」になる */
+.demo-enter-active, .demo-leave-active {
+    transition: opacity 1s;
+}
+
+.demo-enter, .demo-leave-to {
+    opacity: 0;
+}
+
+/* EnterとLeaveで別々のスタイルを定義する */
+.vv-enter-active, .vv-leave-active {
+    transition: opacity 1s, transform 1s;
+}
+
+/* 表示するときは左から */
+.vv-enter {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+/* 消えるときは下へ */
+.vv-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
+}
